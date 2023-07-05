@@ -9,6 +9,11 @@ const baseUrl= "https://platzi-avo.vercel.app"
 
 const appNode = document.querySelector('#app');
 
+appNode.addEventListener('click', (evento) => {
+    if (event.target.nodeName === 'H2')
+    window.alert('Hola')});
+
+
 //intl
 
 // 1 - format fechas
@@ -41,7 +46,8 @@ window.fetch(`${baseUrl}/api/avo`)
         // crear titulo
         const title = document.createElement('h2');
         title.textContent= item.name;
-        title.className='text-xl text-red-600 text-center'
+        title.className='text-xl text-red-600 text-center';
+      
         //crear precio
         const price = document.createElement('div');
         price.textContent= formatPrice(item.price);
